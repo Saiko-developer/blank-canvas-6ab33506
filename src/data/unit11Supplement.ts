@@ -3,6 +3,12 @@
 // `unit9Supplement.ts` and the earlier unit supplements. No other unit's data
 // is touched by this module.
 
+import type { TrainCar } from "@/lib/sentenceStructure";
+
+// Curated "Sentence Structure" breakdown for a single 11A question. Labels are
+// English grammar tags; every gloss is natural Burmese only.
+type SentenceBreakdown = { introMy: string; noteMy: string; cars: TrainCar[] };
+
 export type VocabItem = {
   word: string;
   pronunciation: string; // simple phonetic guide
@@ -30,19 +36,19 @@ export type UnitSupplement = {
 /* ----------------------------- 11A Reading ----------------------------- */
 
 export const partA11A_translations: Record<number, string> = {
-  1: "စာပိုဒ် ၁ — မြန်မာနိုင်ငံ၏ မယှဉ်နိုင်သော အလှအပပစ္စည်း",
-  2: "စာပိုဒ် ၂ — သနပ်ခါးကို မည်သို့ အသုံးပြုသနည်း",
-  3: "စာပိုဒ် ၃ — သနပ်ခါးဆိုသည်မှာ အဘယ်နည်း",
-  4: "စာပိုဒ် ၄ — သနပ်ခါး၏ ပုံစံအမျိုးမျိုး",
-  5: "စာပိုဒ် ၅ — သနပ်ခါး၏ အနာဂတ်",
+  1: "မြန်မာနိုင်ငံ၏ မယှဉ်နိုင်သော အလှအပပစ္စည်း",
+  2: "သနပ်ခါး အသုံးပြုပုံ",
+  3: "သနပ်ခါးဆိုသည်မှာ အဘယ်နည်း",
+  4: "သနပ်ခါး၏ ပုံစံအမျိုးမျိုး",
+  5: "သနပ်ခါး၏ အနာဂတ်",
 };
 
 export const partB11A_translations: Record<number, string> = {
-  1: "စာပိုဒ် ၁ ရှိ booming — a. ပြောင်းလဲခြင်း; b. ကြီးထွားလာခြင်း; c. အောင်မြင်မှု",
-  2: "စာပိုဒ် ၁ ရှိ unique — a. အလွန်ရှားပါးသော; b. အလွန်ထူးခြားသော; c. အလွန်အဖိုးတန်သော",
-  3: "စာပိုဒ် ၂ ရှိ smears — a. ဖုံးအုပ်သည်; b. ထားသည်; c. လိမ်းကျံသည်",
-  4: "စာပိုဒ် ၂ ရှိ cherished — a. တန်ဖိုးထားသော; b. ဂုဏ်ပြုသော; c. လေးစားသော",
-  5: "စာပိုဒ် ၃ ရှိ bewildered — a. ရှုပ်ထွေးသော; b. ဝမ်းသာသော; c. လန့်သွားသော",
+  1: "ပြောင်းလဲခြင်း၊ ကြီးထွားလာခြင်း၊ အောင်မြင်မှု",
+  2: "အလွန်ရှားပါးသော၊ အလွန်ထူးခြားသော၊ အလွန်အဖိုးတန်သော",
+  3: "ဖုံးအုပ်သည်၊ ထားသည်၊ ပြန့်နှံ့သည်",
+  4: "တန်ဖိုးထားသော၊ ဂုဏ်ပြုသော၊ လေးစားသော",
+  5: "ရှုပ်ထွေးသော၊ ဝမ်းသာသော၊ လန့်သွားသော",
 };
 
 export const partC11A_translations: Record<number, string> = {
@@ -56,6 +62,128 @@ export const partC11A_translations: Record<number, string> = {
   8: "မြန်မာမိန်းကလေးများစွာက အဘယ်ကြောင့် သနပ်ခါးကို ဆက်လက် မှီခိုနေကြဆဲနည်း။",
   9: "မိမိသည် သနပ်ခါး လိမ်းကျံခြင်းကို နှစ်သက်ပါသလား။ အဘယ်ကြောင့် နှစ်သက်/ှစ်သက်သနည်း။",
   10: "အနာဂတ်တွင် သနပ်ခါးကို အလှကပ်အဖြစ် အသုံးပြုခြင်းက ပိုလူကြိုက်များလာမည်ဟု ထင်ပါသလား၊ သို့မဟုတ် လျော့နည်းလာမည်ဟု ထင်ပါသလား။ အဘယ်ကြောင့်နည်း။",
+};
+
+/* ---- 11A Reading — Sentence Structure breakdowns (curated) ---- */
+// One breakdown per 11A Exercise C question (full-sentence answers). Tags are
+// always English and reuse TAG_INFO; every gloss is 100% Burmese.
+
+export const partC11A_breakdowns: Record<number, SentenceBreakdown> = {
+  1: {
+    introMy: "'there are' (ရှိသည်) ပုံစံသုံးထားသော WH-မေးခွန်း။ 'there' သည် ပုံပမ်းကတ္တား (dummy subject) ဖြစ်ပြီး 'more choices' က အဓိကကတ္တား ဖြစ်သည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → be-ကြိယာ → ပုံပမ်းကတ္တား → အဓိကကတ္တား → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "Why", translation: "အဘယ်ကြောင့်", tag: "WH-Question Word" },
+      { word: "are", translation: "ရှိကြသနည်း", tag: "Linking Verb" },
+      { word: "there", translation: "ရှိသည်ဟု ညွှန်ပြ (ပုံပမ်းကတ္တား)", tag: "Noun Subject" },
+      { word: "more choices", translation: "ပိုမိုများပြားသော ရွေးချယ်စရာများ", tag: "Noun Subject" },
+      { word: "of beauty products", translation: "အလှအပပစ္စည်းများ၏", tag: "Prepositional Phrase" },
+      { word: "today", translation: "ယနေ့တွင်", tag: "Adverb" },
+      { word: "than in the past", translation: "အတိတ်ကာလထက်", tag: "Prepositional Phrase" },
+    ],
+  },
+  2: {
+    introMy: "ဒါက ခံရသည့်ပုံစံ (passive) WH-မေးခွန်းပါ။ 'is' က အကူကြိယာ၊ 'used' က မူရင်းကြိယာ ဖြစ်သည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → အကူကြိယာ → ကတ္တား → ကြိယာဝိသေသန → မူရင်းကြိယာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "How", translation: "မည်သို့", tag: "WH-Question Word" },
+      { word: "is", translation: "အသုံးပြုခံရသနည်း", tag: "Helping Verb" },
+      { word: "thanakha", translation: "သနပ်ခါးကို", tag: "Noun Subject" },
+      { word: "mainly", translation: "အဓိကအားဖြင့်", tag: "Adverb" },
+      { word: "used", translation: "အသုံးပြုခံသည်", tag: "Main Verb" },
+      { word: "in other countries and in Myanmar", translation: "အခြားနိုင်ငံများနှင့် မြန်မာနိုင်ငံတွင်", tag: "Prepositional Phrase" },
+    ],
+  },
+  3: {
+    introMy: "'For what purpose' ဖြင့် စတင်သော ရည်ရွယ်ချက် မေးခွန်းပါ။",
+    noteMy: "ပုံစံ: WH-စကားစု → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ကံ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "For what purpose", translation: "မည်သည့်ရည်ရွယ်ချက်ဖြင့်", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "beauty conscious ladies", translation: "အလှအပ ဂရုစိုက်သော မိန်းကလေးများသည်", tag: "Noun Subject" },
+      { word: "apply", translation: "လိမ်းကျံကြသနည်း", tag: "Main Verb" },
+      { word: "thanakha", translation: "သနပ်ခါးကို", tag: "Noun Object" },
+      { word: "to their faces", translation: "မိမိတို့၏ မျက်နှာပေါ်တွင်", tag: "Prepositional Phrase" },
+    ],
+  },
+  4: {
+    introMy: "'At what age' ဖြင့် စတင်သော အရွယ်/အချိန် မေးခွန်းပါ။",
+    noteMy: "ပုံစံ: WH-စကားစု → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "At what age", translation: "အဘယ်အရွယ်တွင်", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "pimples", translation: "ဝက်ခြံများသည်", tag: "Noun Subject" },
+      { word: "appear", translation: "ပေါ်ပေါက်ကြသနည်း", tag: "Main Verb" },
+      { word: "on the faces", translation: "မျက်နှာပေါ်တွင်", tag: "Prepositional Phrase" },
+      { word: "of boys", translation: "ယောက်ျားလေးများ၏", tag: "Prepositional Phrase" },
+    ],
+  },
+  5: {
+    introMy: "'What' ဖြင့် စတင်ပြီး 'who' ဆက်စပ်အခန်း (relative clause) ပါဝင်သော မေးခွန်း။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → မူရင်းကြိယာ → ကံ → ဆက်စပ်အခန်း → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "What", translation: "အဘယ်အရာက", tag: "WH-Question Word" },
+      { word: "protects", translation: "ကာကွယ်ပေးသနည်း", tag: "Main Verb" },
+      { word: "people", translation: "လူများကို", tag: "Noun Object" },
+      { word: "who have to toil in the sun", translation: "နေပူထဲတွင် ပင်ပန်းစွာ လုပ်ဆောင်ရသူများကို", tag: "Relative Clause" },
+      { word: "from sunburn", translation: "နေလောင်ခြင်းမှ", tag: "Prepositional Phrase" },
+    ],
+  },
+  6: {
+    introMy: "be-ကြိယာ 'are' + နာမဝိသေသန 'valuable' ဖြင့် ဖွဲ့စည်းထားသော SVC ပုံစံ မေးခွန်း။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တား → ဖြည့်စွက်စာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "Why", translation: "အဘယ်ကြောင့်", tag: "WH-Question Word" },
+      { word: "are", translation: "ဖြစ်ကြသနည်း", tag: "Linking Verb" },
+      { word: "the roots of thanakha trees", translation: "သနပ်ခါးပင်များ၏ အမြစ်များသည်", tag: "Noun Subject" },
+      { word: "valuable", translation: "အဖိုးတန်သနည်း", tag: "Complement" },
+      { word: "to the medical man", translation: "ဆေးကျွေးကျွမ်းကျင်သူအတွက်", tag: "Prepositional Phrase" },
+    ],
+  },
+  7: {
+    introMy: "'In what forms' ဖြင့် စတင်သော မေးခွန်း။ 'available' သည် ဖြည့်စွက်စာ (Complement) ဖြစ်သည်။",
+    noteMy: "ပုံစံ: WH-စကားစု → ဆက်စပ်ကြိယာ → ကတ္တား → ဖြည့်စွက်စာ။",
+    cars: [
+      { word: "In what forms", translation: "မည်သည့် ပုံစံများဖြင့်", tag: "WH-Question Word" },
+      { word: "is", translation: "ရရှိနိုင်သနည်း", tag: "Linking Verb" },
+      { word: "thanakha", translation: "သနပ်ခါးသည်", tag: "Noun Subject" },
+      { word: "available", translation: "ရနိုင်သနည်း", tag: "Complement" },
+    ],
+  },
+  8: {
+    introMy: "'rely on' (မှီခိုသည်) သုံးထားသော WH-မေးခွန်း။ 'on thanakha' သည် ဝိဘတ်စကားစု ဖြစ်သည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → အကူကြိယာ → ကတ္တား → ကြိယာဝိသေသန → မူရင်းကြိယာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "Why", translation: "အဘယ်ကြောင့်", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "many Myanmar ladies", translation: "မြန်မာ မိန်းကလေးများစွာသည်", tag: "Noun Subject" },
+      { word: "still", translation: "ဆက်လက်", tag: "Adverb" },
+      { word: "rely", translation: "မှီခိုကြသနည်း", tag: "Main Verb" },
+      { word: "on thanakha", translation: "သနပ်ခါးကို", tag: "Prepositional Phrase" },
+    ],
+  },
+  9: {
+    introMy: "အကူကြိယာ 'Do' ဖြင့် စတင်သော Yes/No မေးခွန်း၊ နောက်ဆက်တွဲ 'Why or why not?' ဖြင့် အကြောင်းပြန် မေးသည်။",
+    noteMy: "ပုံစံ: အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ကံ (to-infinitive စကားစု)။",
+    cars: [
+      { word: "Do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "you", translation: "သင်သည်", tag: "Noun Subject" },
+      { word: "like", translation: "နှစ်သက်ပါသလား", tag: "Main Verb" },
+      { word: "to apply thanakha to your face", translation: "သနပ်ခါးကို မျက်နှာတွင် လိမ်းကျံရန်ကို", tag: "Noun Object" },
+      { word: "Why or why not?", translation: "အဘယ်ကြောင့်နည်း (သို့) အဘယ်ကြောင့် မနည်းနည်း", tag: "WH-Question Word" },
+    ],
+  },
+  10: {
+    introMy: "'Do you think ...?' ပုံစံ Yes/No မေးခွန်း၊ နောက်တွင် 'Why?' လိုက်သည်။ 'think' ၏ ကံသည် ဝါကျတစ်ခုလုံး ဖြစ်သည်။",
+    noteMy: "ပုံစံ: အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ကံ (ဝါကျ)။",
+    cars: [
+      { word: "Do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "you", translation: "သင်သည်", tag: "Noun Subject" },
+      { word: "think", translation: "ထင်ပါသလား", tag: "Main Verb" },
+      { word: "the use of thanakha as a cosmetic will be more popular or less popular in the future", translation: "အနာဂတ်တွင် သနပ်ခါးကို အလှကပ်အဖြစ် အသုံးပြုခြင်းသည် ပိုလူကြိုက်များလာမည် (သို့) လျော့နည်းလာမည်", tag: "Noun Object" },
+      { word: "Why?", translation: "အဘယ်ကြောင့်နည်း", tag: "WH-Question Word" },
+    ],
+  },
 };
 
 /* ---------------------------- 11B Vocabulary --------------------------- */
