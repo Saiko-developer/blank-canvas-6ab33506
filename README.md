@@ -1,4 +1,4 @@
-# Blank Canvas
+# Remix of First Step from sai latest (5/9/2026)
 
 create initial blank empty project
 
@@ -6,7 +6,7 @@ This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/2f24143f-b7c2-4596-9224-20d20668092d).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/65b7784f-02b5-4122-a416-83194dfbc5e9).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
