@@ -331,6 +331,7 @@ export function ExerciseGroup({
   instructions,
   items,
   enableStructure = true,
+  enableTranslate = true,
   placeholder,
 }: {
   title: string;
@@ -338,6 +339,7 @@ export function ExerciseGroup({
   instructions: string;
   items: ExItem[];
   enableStructure?: boolean;
+  enableTranslate?: boolean;
   placeholder?: string;
 }) {
   return (
@@ -356,19 +358,24 @@ export function ExerciseGroup({
               <p className="text-sm font-medium leading-relaxed">{q.text}</p>
             </div>
 
-            <div className="mt-2 flex flex-wrap gap-2">
-              <ToggleReveal label="Translate Question" icon={Languages}>
-                {q.translation || "မြန်မာ ဘာသာပြန် မရရှိနိုင်ပါ။"}
-              </ToggleReveal>
-              {enableStructure && (
-                <ToggleReveal label="Sentence Structure" icon={Sparkles} tone="primary">
-                  <StructureBreakdown
-                    questionText={q.text.replace(/^"|"$/g, "")}
-                    breakdown={q.breakdown}
-                  />
-                </ToggleReveal>
-              )}
-            </div>
+            {(enableTranslate || enableStructure) && (
+              <div className="mt-2 flex flex-wrap gap-2">
+                {enableTranslate && (
+                  <ToggleReveal label="Translate Question" icon={Languages}>
+                    {q.translation || "မြန်မာ ဘာသာပြန် မရရှိနိုင်ပါ။"}
+                  </ToggleReveal>
+                )}
+                {enableStructure && (
+                  <ToggleReveal label="Sentence Structure" icon={Sparkles} tone="primary">
+                    <StructureBreakdown
+                      questionText={q.text.replace(/^"|"$/g, "")}
+                      breakdown={q.breakdown}
+                    />
+                  </ToggleReveal>
+                )}
+              </div>
+            )}
+
 
             <AnswerTryBox correct={q.answer} placeholder={placeholder} />
           </li>
