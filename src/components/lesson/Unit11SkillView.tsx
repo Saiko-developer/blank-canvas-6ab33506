@@ -24,6 +24,7 @@ import unit11 from "@/data/textbookUnit11.json";
 import {
   partA11A_translations,
   partB11A_translations,
+  partC11A_breakdowns,
   partC11A_translations,
   partA11C_translations,
   partB11C_translations,
@@ -154,6 +155,7 @@ function ReadingView11() {
               translation: partA11A_translations[e.question_number] ?? "",
               answer: e.answer ?? "",
             }))}
+            enableStructure={false}
           />
         ) : null}
 
@@ -169,6 +171,7 @@ function ReadingView11() {
               translation: partB11A_translations[e.question_number] ?? "",
               answer: e.answer ?? "",
             }))}
+            enableStructure={false}
           />
         ) : null}
 
@@ -182,6 +185,7 @@ function ReadingView11() {
               text: e.question ?? e.text,
               translation: partC11A_translations[e.question_number] ?? "",
               answer: e.answer ?? "",
+              breakdown: partC11A_breakdowns[e.question_number],
             }))}
           />
         ) : null}
