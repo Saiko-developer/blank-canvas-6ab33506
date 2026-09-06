@@ -6,6 +6,14 @@
 // `unit10Supplement.ts` and `unit11Supplement.ts`. Units 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 // and 11 data are never touched by this module.
 
+import type { TrainCar } from "@/lib/sentenceStructure";
+
+export type SentenceBreakdown = {
+  cars: TrainCar[];
+  introMy: string;
+  noteMy: string;
+};
+
 export type VocabItem = {
   word: string;
   pronunciation: string; // simple phonetic guide
@@ -16,29 +24,211 @@ export type VocabItem = {
 /* ----------------------------- 12A Reading ------------------------------ */
 
 export const partA12A_translations: Record<number, string> = {
-  1: "စာပိုဒ်မှ (1) မှ (5) အထိ ဝါကျငါးခုကို ဖယ်ထုတ်ထားသည်။ ဝါကျများ (A-E) တွင် ကွက်လပ် (1-5) တစ်ခုချင်းစီနှင့် အကောင်းဆုံး ကိုက်ညီသော ဝါကျကို ရွေးပါ။",
+  1: "ပထမကွက်လပ်",
+  2: "ဒုတိယကွက်လပ်",
+  3: "တတိယကွက်လပ်",
+  4: "စတုတ္ထကွက်လပ်",
+  5: "ပဉ္စမကွက်လပ်",
 };
 
 export const partB12A_translations: Record<number, string> = {
-  1: "ဆေးကုသမှု ဝန်ဆောင်မှု ပေးသူ",
+  1: "ဆေးဝါးကုသမှု ဝန်ဆောင်မှုပေးသူများ",
   2: "ပညာရေး အဖွဲ့အစည်းများ",
-  3: "မြို့ပြ သကျေးဇူးတော်များနှင့် အဆင်ပြေမှုများ",
-  4: "မြို့ပြပြောင်းလဲမှုကြောင့် ဖြစ်ပေါ်လာသော မလိုလားအပ်သော ရလဒ်များ",
+  3: "မြို့ပြ သက်တောင့်သက်သာမှုနှင့် အဆင်ပြေချောမွေ့မှုများ",
+  4: "မြို့ပြဖြစ်ထွန်းလာမှုက ဖြစ်ပေါ်စေသော မလိုလားအပ်သည့် ရလဒ်များ",
   5: "မြို့ပြ ရာဇဝတ်မှုများ",
 };
 
 export const partC12A_translations: Record<number, string> = {
-  1: "ကျေးလက်ဒေသတွင် နေထိုင်သူများသည် မည့်သည့်အကြေင်းရင်းများကြောင့် မကြာခဏ ကျေးလက်အိမ်များကို စွန့်ခွာကြသနည်း။",
-  2: "စာကြောင်း ၉ ရှိ 'greener pastures' ဟူသော စကားစုသည် အဘယ်နှင့် အဓိပ္ပာယ်တူသနည်း။",
-  3: "လူသားများသည် ပိုမိုကောင်းမွန်လိုသောအခါ ၎င်းတို့သည် အဘယ်အရာ ပြုလုပ်ကြသနည်း။",
-  4: "ကျေးလက်ဒေသတွင် ခေတ်မီ မွေးမြူရေးနှင့် နို့ထွက်ပစ္စည်း စိုက်ပျိုးရေးများ တည်ထောင်သောအခါ ထိုနေရာရှိ ကျေးလက်လယ်သမားများတွင် အဘယ်အရာ ဖြစ်ပေါ်သနည်း။",
-  5: "ကမ္ဘာ့အချို့နေရာများတွင် စစ်ပွဲကြောင့် ရွာသားများသည် အဘယ်အရာ ပြုလုပ်ရသနည်း။",
-  6: "မြို့ပြပြောင်းလဲမှုသည် မည်သို့သော မလိုလားအပ်သော ရလဒ်များကို ဖြစ်ပေါ်စေသနည်း။",
-  7: "ဆူးပုန်းရွာများ တိုးပွားလာခြင်းနှင့်အတူ လူများသည် အဘယ်နေရာတွင် နေထိုင်ရမည်အဖြစ် အတင်းအကျပ် ဖြစ်ရသနည်း။",
-  8: "အလုပ်အကိုင်အခွင့်အလမ်း ပိုမိုဖန်တီးနိုင်ပါက မည်သည့်ပြဿနာကို ဖြေရှင်းနိုင်သနည်း။",
-  9: "ရဲတပ်ဖွဲ့ကို မည်မျှအထိ ချဲ့ထွင်သင့်သနည်း။",
-  10: "သင်သည် ရွာတစ်ရွာတွင် နေထိုင်လျှင် မြို့ကြီးသို့ ရွှေ့ပြေားမည်လား၊ အဘယ်ကြောင့်နည်း။",
-  11: "သင်သည် ရွာတစ်ရွာ သို့မဟုတ် မြို့ကြီးတစ်ခုတွင် နေထိုင်လိုပါသလား၊ အဘယ်ကြောင့်နည်း။",
+  1: "ကျေးလက်ဒေသတွင် နေထိုင်သူများသည် မိမိတို့၏ ကျေးလက်နေအိမ်များကို အဘယ်အကြောင်းများကြောင့် မကြာခဏ စွန့်ခွာကြသနည်း။",
+  2: "စာသားတွင် ပါရှိသော \"greener pastures\" ဟူသည့် စကားစုသည် မည်သည့်အနက်နှင့် အနီးစပ်ဆုံး တူသနည်း။",
+  3: "လူသားများသည် ဘဝပိုမိုကောင်းမွန်လိုသောအခါ မည်သို့ ပြုလုပ်ကြသနည်း။",
+  4: "ကျေးလက်ဒေသတွင် ခေတ်မီ တိရစ္ဆာန်မွေးမြူရေးနှင့် နို့စားခြံများ တည်ထောင်လာသောအခါ ထိုဒေသရှိ ကျေးလက်လယ်သမားများသည် မည်သို့ ဖြစ်လာသနည်း။",
+  5: "ကမ္ဘာ့အချို့ဒေသများတွင် စစ်ဘေးကြောင့် ရွာသားများသည် မည်သည့်အရာကို ပြုလုပ်ရသနည်း။",
+  6: "မြို့ပြဖြစ်ထွန်းလာမှုသည် မည်သို့သော မလိုလားအပ်သည့် ရလဒ်များကို ဖြစ်ပေါ်စေသနည်း။",
+  7: "ကျူးကျော်ရပ်ကွက်များ တိုးပွားလာမှုနှင့်အတူ လူများသည် မည်သည့်နေရာတွင် နေထိုင်ရန် အတင်းအကျပ် ဖြစ်ရသနည်း။",
+  8: "အလုပ်အကိုင် အခွင့်အလမ်းများ ပိုမိုဖန်တီးနိုင်ပါက မည်သည့်ပြဿနာကို ဖြေရှင်းနိုင်မည်နည်း။",
+  9: "ရဲတပ်ဖွဲ့အင်အားကို မည်မျှအထိ တိုးချဲ့သင့်သနည်း။",
+  10: "သင်သည် ရွာတစ်ရွာတွင် နေထိုင်ခဲ့လျှင် မြို့ကြီးသို့ ရွှေ့ပြောင်းမည်လား၊ အဘယ်ကြောင့်နည်း။",
+  11: "သင်သည် ရွာတွင် နေထိုင်လိုသလား၊ မြို့ကြီးတွင် နေထိုင်လိုသလား၊ အဘယ်ကြောင့်နည်း။",
+};
+
+export const compCheck12A_translations: Record<number, string> = {
+  1: "မြို့ပြဖြစ်ထွန်းလာမှု ဆိုသည်မှာ အဘယ်နည်း။",
+  2: "မြို့ပြဖြစ်ထွန်းလာမှု၏ အကြောင်းရင်းများမှာ အဘယ်တို့နည်း။",
+  3: "မြို့ပြဖြစ်ထွန်းလာမှု၏ အားသာချက်များမှာ အဘယ်တို့နည်း။",
+  4: "မြို့ပြဖြစ်ထွန်းလာမှု၏ အားနည်းချက်များမှာ အဘယ်တို့နည်း။",
+  5: "မြို့ပြဖြစ်ထွန်းလာမှု ပြဿနာများအတွက် ဖြေရှင်းနည်းအချို့မှာ အဘယ်တို့နည်း။",
+};
+
+export const partC12A_breakdowns: Record<number, SentenceBreakdown> = {
+  1: {
+    introMy: "\"For what reasons\" ဖြင့် အစပြုသော WH-မေးခွန်း။ အကူကြိယာ \"do\" ပြီးမှ ကတ္တားနှင့် မူရင်းကြိယာ လိုက်ပါသည်။",
+    noteMy: "ပုံစံ: WH-စကားစု → အကူကြိယာ → ကတ္တား (ဆက်စပ်စာစုပါ) → ကြိယာဝိသေသန → မူရင်းကြိယာ → ကံ။",
+    cars: [
+      { word: "For what reasons", translation: "အဘယ်အကြောင်းများကြောင့်", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "people living in the countryside", translation: "ကျေးလက်ဒေသတွင် နေထိုင်သူများသည်", tag: "Noun Subject" },
+      { word: "often", translation: "မကြာခဏ", tag: "Adverb" },
+      { word: "leave", translation: "စွန့်ခွာကြသနည်း", tag: "Main Verb" },
+      { word: "their rural homes", translation: "မိမိတို့၏ ကျေးလက်နေအိမ်များကို", tag: "Noun Object" },
+    ],
+  },
+  2: {
+    introMy: "ဤဝါကျသည် ကတ္တား + be-ကြိယာ + ဖြည့်စွက်စာ ဖွဲ့စည်းမှုဖြင့် စကားစုတစ်ခု၏ အနက်ကို မေးထားသည်။",
+    noteMy: "ပုံစံ: ကတ္တားစကားစု → ဆက်စပ်ကြိယာ → ဖြည့်စွက်စာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "The phrase 'greener pastures'", translation: "\"greener pastures\" ဟူသော စကားစုသည်", tag: "Noun Subject" },
+      { word: "is", translation: "ဖြစ်သည်", tag: "Linking Verb" },
+      { word: "similar", translation: "တူညီသည်", tag: "Complement" },
+      { word: "in meaning", translation: "အနက်အားဖြင့်", tag: "Prepositional Phrase" },
+    ],
+  },
+  3: {
+    introMy: "အချိန်ပြ ဆက်စပ်ဝါကျ (Adverb Clause) ဖြင့် အစပြုပြီး နောက်တွင် WH-မေးခွန်း ပင်မဝါကျ လိုက်သည်။",
+    noteMy: "ပုံစံ: အချိန်ပြဆက်စပ်ဝါကျ → WH-စကားလုံး → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ။",
+    cars: [
+      { word: "When human beings wish to be better", translation: "လူသားများသည် ပိုမိုကောင်းမွန်လိုသောအခါ", tag: "Adverb Clause" },
+      { word: "what", translation: "မည်သည့်အရာကို", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "they", translation: "သူတို့သည်", tag: "Noun Subject" },
+      { word: "do", translation: "ပြုလုပ်ကြသနည်း", tag: "Main Verb" },
+    ],
+  },
+  4: {
+    introMy: "ခံရသည့်ပုံစံ (passive) အချိန်ပြဆက်စပ်ဝါကျ ရှေ့တွင် ရှိပြီး ပင်မမေးခွန်းသည် \"what happens\" ဖြစ်သည်။",
+    noteMy: "ပုံစံ: အချိန်ပြဆက်စပ်ဝါကျ → WH-စကားလုံး → ကြိယာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "When modern livestock and dairy farms are established in the countryside", translation: "ကျေးလက်ဒေသတွင် ခေတ်မီ တိရစ္ဆာန်မွေးမြူရေးနှင့် နို့စားခြံများ တည်ထောင်လာသောအခါ", tag: "Adverb Clause" },
+      { word: "what", translation: "မည်သည့်အရာ", tag: "WH-Question Word" },
+      { word: "happens", translation: "ဖြစ်ပေါ်သနည်း", tag: "Main Verb" },
+      { word: "to the rural farmers there", translation: "ထိုဒေသရှိ ကျေးလက်လယ်သမားများအပေါ်", tag: "Prepositional Phrase" },
+    ],
+  },
+  5: {
+    introMy: "အကြောင်းပြ ဝိဘတ်စကားစုဖြင့် အစပြုပြီး နောက်တွင် WH-မေးခွန်း လိုက်သည်။",
+    noteMy: "ပုံစံ: အကြောင်းပြဝိဘတ်စကားစု → WH-စကားလုံး → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ။",
+    cars: [
+      { word: "Because of war in some parts of the world", translation: "ကမ္ဘာ့အချို့ဒေသများတွင် စစ်ဘေးကြောင့်", tag: "Prepositional Phrase" },
+      { word: "what", translation: "မည်သည့်အရာကို", tag: "WH-Question Word" },
+      { word: "do", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "people in villages", translation: "ရွာများတွင် နေထိုင်သူများသည်", tag: "Noun Subject" },
+      { word: "have to do", translation: "ပြုလုပ်ရသနည်း", tag: "Main Verb" },
+    ],
+  },
+  6: {
+    introMy: "\"What kind of ...\" ဖြင့် အမျိုးအစားကို မေးသော WH-မေးခွန်း။",
+    noteMy: "ပုံစံ: WH-စကားစု (ကံပါဝင်) → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ။",
+    cars: [
+      { word: "What kind of undesirable results", translation: "မည်သို့သော မလိုလားအပ်သည့် ရလဒ်များကို", tag: "WH-Question Word" },
+      { word: "does", translation: "မေးခွန်းပြု အကူကြိယာ", tag: "Helping Verb" },
+      { word: "urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှုသည်", tag: "Noun Subject" },
+      { word: "bring about", translation: "ဖြစ်ပေါ်စေသနည်း", tag: "Main Verb" },
+    ],
+  },
+  7: {
+    introMy: "ဝိဘတ်စကားစုဖြင့် အစပြုပြီး ခံရသည့်ပုံစံ (passive) WH-မေးခွန်း လိုက်သည်။",
+    noteMy: "ပုံစံ: ဝိဘတ်စကားစု → WH-စကားလုံး → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ။",
+    cars: [
+      { word: "With the growth of slums", translation: "ကျူးကျော်ရပ်ကွက်များ တိုးပွားလာမှုနှင့်အတူ", tag: "Prepositional Phrase" },
+      { word: "where", translation: "မည်သည့်နေရာတွင်", tag: "WH-Question Word" },
+      { word: "are", translation: "ခံရသည့်ပုံစံ အကူကြိယာ", tag: "Helping Verb" },
+      { word: "people", translation: "လူများသည်", tag: "Noun Subject" },
+      { word: "forced to live", translation: "နေထိုင်ရန် အတင်းအကျပ် ခံရသနည်း", tag: "Main Verb" },
+    ],
+  },
+  8: {
+    introMy: "အကြောင်းအခြေပြ (if) ဆက်စပ်ဝါကျ ရှေ့တွင် ရှိပြီး ပင်မမေးခွန်းသည် ခံရသည့်ပုံစံ ဖြစ်သည်။",
+    noteMy: "ပုံစံ: if-ဆက်စပ်ဝါကျ → WH-စကားစု → အကူကြိယာ → မူရင်းကြိယာ။",
+    cars: [
+      { word: "If more job opportunities can be created", translation: "အလုပ်အကိုင် အခွင့်အလမ်းများ ပိုမိုဖန်တီးနိုင်ပါက", tag: "Adverb Clause" },
+      { word: "what problem", translation: "မည်သည့်ပြဿနာကို", tag: "WH-Question Word" },
+      { word: "can be", translation: "နိုင်သည် (အကူကြိယာစု)", tag: "Helping Verb" },
+      { word: "solved", translation: "ဖြေရှင်းနိုင်မည်နည်း", tag: "Main Verb" },
+    ],
+  },
+  9: {
+    introMy: "\"To what extent\" သည် အတိုင်းအတာကို မေးသော ဝိဘတ်စကားစု ဖြစ်သည်။ ပင်မဝါကျသည် ခံရသည့်ပုံစံ။",
+    noteMy: "ပုံစံ: အတိုင်းအတာပြ WH-စကားစု → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ။",
+    cars: [
+      { word: "To what extent", translation: "မည်မျှအထိ", tag: "WH-Question Word" },
+      { word: "should", translation: "သင့်သည် (အကူကြိယာ)", tag: "Helping Verb" },
+      { word: "the police force", translation: "ရဲတပ်ဖွဲ့အင်အားကို", tag: "Noun Subject" },
+      { word: "be expanded", translation: "တိုးချဲ့သနည်း", tag: "Main Verb" },
+    ],
+  },
+  10: {
+    introMy: "အခြေအနေမှန်းဆချက် (second conditional) မေးခွန်း — if-ဝါကျတွင် past ပုံစံ၊ ပင်မဝါကျတွင် \"would\"။",
+    noteMy: "ပုံစံ: if-ဆက်စပ်ဝါကျ → အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "If you were living in a village", translation: "သင်သည် ရွာတစ်ရွာတွင် နေထိုင်ခဲ့လျှင်", tag: "Adverb Clause" },
+      { word: "would", translation: "မည်လား (အကူကြိယာ)", tag: "Helping Verb" },
+      { word: "you", translation: "သင်သည်", tag: "Noun Subject" },
+      { word: "move", translation: "ရွှေ့ပြောင်းမည်", tag: "Main Verb" },
+      { word: "to a big city", translation: "မြို့ကြီးသို့", tag: "Prepositional Phrase" },
+    ],
+  },
+  11: {
+    introMy: "ရွေးချယ်စရာ နှစ်ခုကို တွဲပေးထားသော Yes/No မေးခွန်း ဖြစ်သည်။",
+    noteMy: "ပုံစံ: အကူကြိယာ → ကတ္တား → မူရင်းကြိယာ → ဝိဘတ်စကားစု (ရွေးချယ်စရာနှစ်ခု)။",
+    cars: [
+      { word: "Would", translation: "လိုပါသလား (အကူကြိယာ)", tag: "Helping Verb" },
+      { word: "you", translation: "သင်သည်", tag: "Noun Subject" },
+      { word: "like to live", translation: "နေထိုင်လိုသနည်း", tag: "Main Verb" },
+      { word: "in a village or a big city", translation: "ရွာတွင်လား၊ မြို့ကြီးတွင်လား", tag: "Prepositional Phrase" },
+    ],
+  },
+};
+
+export const compCheck12A_breakdowns: Record<number, SentenceBreakdown> = {
+  1: {
+    introMy: "\"What is ...?\" ပုံစံ အနက်မေးခွန်း — WH-စကားလုံး + be-ကြိယာ + ကတ္တား။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တား။",
+    cars: [
+      { word: "What", translation: "အဘယ်နည်း", tag: "WH-Question Word" },
+      { word: "is", translation: "ဖြစ်သနည်း", tag: "Linking Verb" },
+      { word: "urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှု ဆိုသည်မှာ", tag: "Noun Subject" },
+    ],
+  },
+  2: {
+    introMy: "အများကိန်း ကတ္တားနှင့် \"are\" ကို တွဲသုံးသော WH-မေးခွန်း။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တားစကားစု။",
+    cars: [
+      { word: "What", translation: "အဘယ်တို့နည်း", tag: "WH-Question Word" },
+      { word: "are", translation: "ဖြစ်သနည်း", tag: "Linking Verb" },
+      { word: "the causes of urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှု၏ အကြောင်းရင်းများမှာ", tag: "Noun Subject" },
+    ],
+  },
+  3: {
+    introMy: "ကတ္တားစကားစုအတွင်း \"of urbanization\" သည် ပိုင်ဆိုင်မှုပြ ဝိဘတ်စကားစု ဖြစ်သည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တား → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "What", translation: "အဘယ်တို့နည်း", tag: "WH-Question Word" },
+      { word: "are", translation: "ဖြစ်သနည်း", tag: "Linking Verb" },
+      { word: "the advantages", translation: "အားသာချက်များမှာ", tag: "Noun Subject" },
+      { word: "of urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှု၏", tag: "Prepositional Phrase" },
+    ],
+  },
+  4: {
+    introMy: "အထက်ပါမေးခွန်းနှင့် တူသော ပုံစံ ဖြစ်ပြီး ကတ္တားသာ ကွာသည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တား → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "What", translation: "အဘယ်တို့နည်း", tag: "WH-Question Word" },
+      { word: "are", translation: "ဖြစ်သနည်း", tag: "Linking Verb" },
+      { word: "the disadvantages", translation: "အားနည်းချက်များမှာ", tag: "Noun Subject" },
+      { word: "of urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှု၏", tag: "Prepositional Phrase" },
+    ],
+  },
+  5: {
+    introMy: "ကတ္တားစကားစုတွင် \"some solutions\" နှင့် ဝိဘတ်စကားစု နှစ်ခု ဆက်တွဲ ပါဝင်သည်။",
+    noteMy: "ပုံစံ: WH-စကားလုံး → ဆက်စပ်ကြိယာ → ကတ္တား → ဝိဘတ်စကားစု။",
+    cars: [
+      { word: "What", translation: "အဘယ်တို့နည်း", tag: "WH-Question Word" },
+      { word: "are", translation: "ဖြစ်သနည်း", tag: "Linking Verb" },
+      { word: "some solutions", translation: "ဖြေရှင်းနည်းအချို့မှာ", tag: "Noun Subject" },
+      { word: "to those problems of urbanization", translation: "မြို့ပြဖြစ်ထွန်းလာမှု ပြဿနာများအတွက်", tag: "Prepositional Phrase" },
+    ],
+  },
 };
 
 /* ---------------------------- 12B Vocabulary ---------------------------- */
